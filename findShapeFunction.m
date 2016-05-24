@@ -151,7 +151,10 @@ figure;
 for i=1:number
     subplot(2,(number/2),i);
     imshow(sortedErrorArray{i,2});
-    title(strcat('match ',int2str(i)));
+    fileTitle = strsplit (sortedErrorArray{i,2},filesep);
+    fileTitle = fileTitle {1,[end]};
+    
+    title(strcat(int2str(i), '  -  ',fileTitle),'interpreter','none');
     
 
 end
